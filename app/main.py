@@ -16,6 +16,15 @@ schema = make_executable_schema(type_defs, mutation)
 
 app = FastAPI()
 
+# CORS: configuración profesional y genérica
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/")
 def root():
