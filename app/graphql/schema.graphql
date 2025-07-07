@@ -1,0 +1,13 @@
+type Query {
+  _empty: String
+}
+
+type Mutation {
+  cancelOrder(id: ID!): CancelOrderResponse!
+}
+
+type CancelOrderResponse {
+  id: ID
+  status: String
+  message: String
+}
